@@ -1,0 +1,22 @@
+# launch our autostart apps (if we are on the correct tty)
+sleep 5
+if [ ! -d "/home/pigaming/addonusb/ora_roms/roms" ] && [ -d "/home/pigaming/RetroPie/localroms" ] ; then
+        echo "Drive is not there rolling back expansion."
+        sleep 2
+        sudo cp /etc/samba/smb.conf.bkup /etc/samba/smb.conf
+        sudo /usr/sbin/service smbd restart
+        mv /home/pigaming/RetroPie/roms /home/pigaming/RetroPie/recovery; ln -s /home/pigaming/RetroPie/localroms /home/pigaming/RetroPie/roms
+    elif [ -d "/home/pigaming/addonusb/ora_roms/roms" ] && [ -d "/home/pigaming/RetroPie/recovery" ] ; then
+        rm -r /home/pigaming/RetroPie/recovery
+        unlink /home/pigaming/RetroPie/roms; mkdir /home/pigaming/RetroPie/roms
+        sudo mount -t overlay overlay -olowerdir=/home/pigaming/addonusb/ora_roms/roms,upperdir=/home/pigaming/RetroPie/localroms,workdir=/home/pigaming/.work /home/pigaming/RetroPie/roms
+        sudo cp /etc/samba/smb.conf.exp /etc/samba/smb.conf
+        sudo /usr/sbin/service smbd restart
+        elif [ -d "/home/pigaming/addonusb/ora_roms/roms" ] && [ -d "/home/pigaming/RetroPie/roms" ] && [ `find /home/pigaming/RetroPie/roms -type f -mtime +7 | wc -l` -eq 0 ] ; then
+        sleep 1
+        sudo mount -t overlay overlay -olowerdir=/home/pigaming/addonusb/ora_roms/roms,upperdir=/home/pigaming/RetroPie/localroms,workdir=/home/pigaming/.work /home/pigaming/RetroPie/roms
+fi
+
+if [ "`tty`" = "/dev/tty1" ]; then
+    bash "/opt/retropie/configs/all/autostart.sh"
+fi
