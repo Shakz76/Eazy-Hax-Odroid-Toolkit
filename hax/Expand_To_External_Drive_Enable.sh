@@ -3,6 +3,8 @@
 # So folks will stop getting ripped off for bigger drives on ebay.
 mkdir /home/pigaming/addonusb > /dev/null 2>&1
 mkdir /home/pigaming/.work > /dev/null 2>&1
+mkdir /home/pigaming/combined_drives > /dev/null 2>&1
+
 testdrive=`df |grep media |awk '{print $1 }'|wc -l`
 if [ $testdrive -eq 0 ] ; then
 echo "No External drive detected. Exiting."
@@ -67,14 +69,14 @@ sleep 1
 mv /home/pigaming/RetroPie/roms /home/pigaming/RetroPie/localroms/
 mkdir /home/pigaming/RetroPie/roms
 cd /etc/samba/
-sudo wget https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/hax/smb.conf.exp
+sudo wget -o https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/hax/smb.conf.exp
 cd /etc/profile.d
-sudo wget https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/hax/10-retropie.sh.exp
+sudo wget -o https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/hax/10-retropie.sh.exp
 sudo mv /etc/profile.d/10-retropie.sh /etc/profile.d/10-retropie.sh.org
 sudo cp /etc/profile.d/10-retropie.sh.exp /etc/profile.d/10-retropie.sh
 sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bkup
 echo "The drive has been expanded and your system will now halt. Detach your external drive...plug it up to your computer. Load the games then plug it back in and restart your Retro Arena rig...you should see your additional games."
-echo "You also have the option of uploading games through windows via \\odroid. Have fun!!!"
+echo "You also have the option of uploading games through windows via /\\/odroid. Have fun!!!"
 echo "-Forrest aka Eazy Hax on youtube!"
 sleep 10
 sudo halt
