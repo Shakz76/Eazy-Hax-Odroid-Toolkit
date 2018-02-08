@@ -14,7 +14,7 @@ if [ ! -d "/home/pigaming/addonusb/ora_roms/roms" ] && [ -d "/home/pigaming/Retr
         sudo /usr/sbin/service smbd restart
         elif [ -d "/home/pigaming/addonusb/ora_roms/roms" ] && [ -d "/home/pigaming/RetroPie/roms" ] && [ `find /home/pigaming/RetroPie/roms -type f -mtime +7 | wc -l` -eq 0 ] ; then
         sleep 1
-        sudo mount -t overlay overlay -olowerdir=/home/pigaming/addonusb/ora_roms/roms,upperdir=/home/pigaming/RetroPie/localroms,workdir=/home/pigaming/.work /home/pigaming/RetroPie/roms
+        sudo mount -t overlay overlay -olowerdir=/home/pigaming/addonusb/ora_roms/roms,upperdir=/home/pigaming/RetroPie/localroms,workdir=/home/pigaming/.work /home/pigaming/RetroPie/combined_drives
 fi
 
 if [ "`tty`" = "/dev/tty1" ]; then

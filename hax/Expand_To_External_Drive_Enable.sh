@@ -3,7 +3,7 @@
 # So folks will stop getting ripped off for bigger drives on ebay.
 mkdir /home/pigaming/addonusb > /dev/null 2>&1
 mkdir /home/pigaming/.work > /dev/null 2>&1
-mkdir /home/pigaming/combined_drives > /dev/null 2>&1
+mkdir /home/pigaming/RetroPie/combined_drives > /dev/null 2>&1
 
 testdrive=`df |grep media |awk '{print $1 }'|wc -l`
 if [ $testdrive -eq 0 ] ; then
