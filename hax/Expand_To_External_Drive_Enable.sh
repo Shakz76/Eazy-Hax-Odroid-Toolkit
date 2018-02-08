@@ -69,9 +69,9 @@ sleep 1
 mv /home/pigaming/RetroPie/roms /home/pigaming/RetroPie/localroms/
 mkdir /home/pigaming/RetroPie/roms
 cd /etc/samba/
-sudo wget https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/hax/smb.conf.exp
+sudo wget -N https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/hax/smb.conf.exp
 cd /etc/profile.d
-sudo wget https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/hax/10-retropie.sh.exp
+sudo wget -N https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/hax/10-retropie.sh.exp
 sudo mv /etc/profile.d/10-retropie.sh /etc/profile.d/10-retropie.sh.org
 sudo cp /etc/profile.d/10-retropie.sh.exp /etc/profile.d/10-retropie.sh
 sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bkup
