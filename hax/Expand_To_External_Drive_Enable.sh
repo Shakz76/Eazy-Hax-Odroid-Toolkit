@@ -66,8 +66,7 @@ sudo mount -a
 mkdir $usb_path/roms/
 find "/home/pigaming/RetroPie/roms" -mindepth 1 -maxdepth 1 -type d -printf "$usb_path/roms/%f\n" | xargs mkdir -p 2>/dev/null || true
 sleep 1
-mv /home/pigaming/RetroPie/roms /home/pigaming/RetroPie/localroms/
-mkdir /home/pigaming/RetroPie/roms
+mv /home/pigaming/RetroPie/roms /home/pigaming/RetroPie/localroms
 cd /etc/samba/
 sudo wget -N https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/hax/smb.conf.exp
 sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bkup
