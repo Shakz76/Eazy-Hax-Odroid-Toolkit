@@ -78,7 +78,7 @@ sudo mv /etc/profile.d/10-retropie.sh /etc/profile.d/10-retropie.sh.org
 sudo cp /etc/profile.d/10-retropie.sh.exp /etc/profile.d/10-retropie.sh
 sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bkup
 echo "The drive has been expanded and your system will now halt. Detach your external drive...plug it up to your computer. Load the games then plug it back in and restart your Retro Arena rig...you should see your additional games."
-echo "You also have the option of uploading games through windows via \/\/odroid. Have fun!!!"
+echo 'You also have the option of uploading games through windows via //odroid in windows file explorere (your Retro Arena rig has to be connected to your home network). Have fun!!!'
 echo "-Forrest aka Eazy Hax on youtube!"
 sleep 10
 sudo halt
