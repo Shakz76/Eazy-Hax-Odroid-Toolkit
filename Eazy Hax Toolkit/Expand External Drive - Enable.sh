@@ -54,11 +54,11 @@ find "$HOME/RetroPie/roms" -mindepth 1 -maxdepth 1 -type d -printf "$HOME/addonu
 sleep 1
 mv $HOME/RetroPie/roms $HOME/RetroPie/localroms
 cd /etc/samba/
-sudo curl -o smb.conf.exp https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/smb.conf.exp
+sudo curl -o smb.conf.exp https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/cfg/smb.conf.exp
 sudo mv smb.conf smb.conf.bkup
 sudo ln -s smb.conf.exp smb.conf
 cd /etc/profile.d
-sudo curl -o 10-retropie.sh.exp https://raw.githubusercontent.com/Shakz76/Eazy-Hax-RetroPie-Toolkit/master/cfg/10-retropie.sh.exp
+sudo curl -o 10-retropie.sh.exp https://raw.githubusercontent.com/Shakz76/Eazy-Hax-Odroid-Toolkit/master/cfg/10-retropie.sh.exp
 sudo mv /etc/profile.d/10-retropie.sh /etc/profile.d/10-retropie.sh.org
 sudo ln -s 10-retropie.sh.exp 10-retropie.sh
 echo "The drive has been expanded and your system will now halt. Detach your external drive...plug it up to your computer. Load the games then plug it back in and restart your rig...you should see your additional games."
