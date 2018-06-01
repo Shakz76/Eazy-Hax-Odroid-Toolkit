@@ -65,5 +65,5 @@ echo "The drive has been expanded and your system will now halt. Detach your ext
 echo 'You also have the option of uploading games through windows via //odroid in windows file explorere (your Retro Arena rig has to be connected to your home network). Have fun!!!'
 echo "-Forrest aka Eazy Hax on youtube!"
 sleep 10
-sudo halt
+sudo reboot
 

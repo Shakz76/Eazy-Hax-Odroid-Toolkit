@@ -257,14 +257,6 @@
 # Please note that you also need to set appropriate Unix permissions
 # to the drivers directory for these users to have write rights in it
 ;   write list = root, @lpadmin
-[Developer]
-comment = developer
-path = /home/pigaming/developer
-guest ok = yes
-writable = yes
-forceuser = pigaming
-create mask = 0644
-directory mask = 0755
 [roms_sdcard]
 comment = "Your SD Card Roms"
 path = "/home/pigaming/RetroPie/localroms"
