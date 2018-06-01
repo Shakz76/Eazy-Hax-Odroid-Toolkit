@@ -28,13 +28,11 @@ function main_menu() {
             --menu "What action would you like to perform?" 25 75 20 \
             1 "Expand Rom Storage to External Hard Drive" \
             2 "Disable Expansion and only use my SD card/emmc" \
-            3 "Placeholder to copy media" \
             2>&1 > /dev/tty)
 
         case "$choice" in
             1) expand  ;;
             2) disable  ;;
-            3) media  ;;
             *)  break ;;
         esac
     done
@@ -135,11 +133,6 @@ mv /home/pigaming/RetroPie/localroms /home/pigaming/RetroPie/roms
 sudo rm -r /home/pigaming/RetroPie/combined_drives && sudo rm -r /home/pigaming/.work && sudo rm -r /home/pigaming/addonusb
 sudo reboot
 fi
-}
-
-function media() {
-dialog --infobox "...Thinking on that..." 3 26 ; sleep 2
-echo "Insert code here"
 }
 
 main_menu
